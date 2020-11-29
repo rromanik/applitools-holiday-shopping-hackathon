@@ -1,11 +1,8 @@
 # applitools-holiday-shopping-hackathon
 This project is my submission to Applitools Holiday Shoping Hackathon organized by [Applitools](https://applitools.com/).  
 The hackathon instructions can be found here: https://applitools.com/hackathon-v20-3-instructions/  
-Out of Eligible Testing Frameworks, I selected
-* Selenium WebDriver
-
-Out of Eligible programming languages, I selected
-* Java
+Out of Eligible Testing Frameworks, I selected **Selenium WebDriver**, and out of Eligible programming languages, I selected
+**Java**.
 
 ## Prerequisites
 To execute the test on a local machine, the following needs to be installed:
@@ -16,7 +13,9 @@ To execute the test on a local machine, the following needs to be installed:
 ## Test Execution
 ### Part 1
 Run the following Maven command from the root folder of the project:  
+
 ```mvn clean test -Dprofile=part1```  
+
 This will execute the three tests, i.e. 'main page', 'filter by color', and 'product details', in Chrome browser locally.   
 The Eyes will execute each of the three tests across the following configurations 
 using [Applitools Ultrafast Grid](https://applitools.com/docs/topics/sdk/vg-configuration.html?Highlight=grid).  
@@ -26,7 +25,9 @@ The tests will run against the V1 production version, `URL=https://demo.applitoo
 
 ### Part 2
 Run the following Maven command from the root folder of the project:  
+
 ```mvn clean test -Dprofile=part2```  
+
 This will execute the three tests in Chrome browser locally.
 The Eyes will execute each of the three tests across the following configurations 
 using [Applitools Ultrafast Grid](https://applitools.com/docs/topics/sdk/vg-configuration.html?Highlight=grid).  
@@ -36,7 +37,9 @@ The tests will run against the dev-branch version, `URL=https://demo.applitools.
 
 ### Part 3
 Run the following Maven command from the root folder of the project:  
+
 ```mvn clean test -Dprofile=part3```  
+
 This will execute the three tests in Chrome browser locally.
 The Eyes will execute each of the three tests across the following configurations
 using [Applitools Ultrafast Grid](https://applitools.com/docs/topics/sdk/vg-configuration.html?Highlight=grid):
@@ -60,15 +63,19 @@ Usage example for Maven: `-Dapp.url=https://demo.applitools.com/tlcHackathonMast
 | UFG Browser configuration | ufg.browser.config | 'single', 'multiple'  | 'single' will run for Chrome (1200 x 800) only, 'multiple' - for 5 browsers|
 | Applitools API KEY        | applitools.api.key | <your_api_key>        | If you want to execute tests and get the result on your UFG dashboard, provide your key via command line or into 'config.properties' file  |
 | Application Name          | app.name           | <any_value>           | The application name as will be associated with tests on the Applitools Eyes dashboard |
+| Profile                   | profile            | 'part1', 'part2', 'part3' | To be used only from command line. Each profile corresponds to the respective Hackaton part. |
 
 ## Used Technologies / Libraries
 * Applitools Eyes  
-com.applitools:eyes-selenium-java3:3.186.0 - for visual testing using Applitools Ultrafast Grid;
+Used for visual testing using Applitools Ultrafast Grid:
+com.applitools:eyes-selenium-java3:3.186.0;
+
 * WebDriver Manager  
-io.github.bonigarcia:webdrivermanager:4.2.2 - to automatically set up ChromeDriver for local run;
+Used to automatically set up ChromeDriver for local run: io.github.bonigarcia:webdrivermanager:4.2.2;
+
 * JUnit 5  
-org.junit.jupiter:junit-jupiter-api:5.7.0  
-org.junit.jupiter:junit-jupiter-api:5.7.0 - as the test runner.
+Used as the test runner: org.junit.jupiter:junit-jupiter-api:5.7.0,
+org.junit.jupiter:junit-jupiter-api:5.7.0.
 
 
 ## My Hackathon Experience
