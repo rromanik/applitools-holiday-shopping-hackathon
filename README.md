@@ -65,13 +65,15 @@ Usage example for Maven: `-Dapp.url=https://demo.applitools.com/tlcHackathonMast
 | Application Name          | app.name           | <any_value>           | The application name as will be associated with tests on the Applitools Eyes dashboard |
 | Profile                   | profile            | 'part1', 'part2', 'part3' | To be used only from command line. Each profile corresponds to the respective Hackaton part. |
 
+This, for example, adds a flexibility to execute any browser configuration for any version of the application.
+
 ## Used Technologies / Libraries
-* Applitools Eyes  
+* Applitools Eyes   
 Used for visual testing using Applitools Ultrafast Grid:
 com.applitools:eyes-selenium-java3:3.186.0;
 
 * WebDriver Manager  
-Used to automatically set up ChromeDriver for local run: io.github.bonigarcia:webdrivermanager:4.2.2;
+Used to automatically download and set up ChromeDriver for local run: io.github.bonigarcia:webdrivermanager:4.2.2;
 
 * JUnit 5  
 Used as the test runner: org.junit.jupiter:junit-jupiter-api:5.7.0,
@@ -79,3 +81,34 @@ org.junit.jupiter:junit-jupiter-api:5.7.0.
 
 
 ## My Hackathon Experience
+
+Participation in the hackathon was amazing for me. I had fun learning new framework -- Applitools Eyes.
+But even more exciting was playing with Applitools Ultrafast Grid and Applitools Eyes Dashboard features,
+Root Cause Analysis (RCA) being the coolest one.
+
+Regarding my implementation of the challenge, I've tried to use as few dependencies as possible.
+
+First, I used the latest (at the time of this writing) version of eyes-selenium-java3.
+I decided to not use eyes-selenium-java4 yet, since it depends on alpha version of Selenium WebDriver.
+
+Second, I used JUnit 5 as the test runner.
+
+Third, I added webdrivermanager library to automatically download and setup webdrivers,
+so that there is no need to install a webdriver, e.g. chromedriver, manually.
+
+On the one hand, I tried to make the test execution as **easy and clear** as possible.
+Thus, I introduced `profile` system property that supports values `part1`, `part2`, and `part3`.
+The meaning behind the profiles should be obvious based on the hackathon instructions.
+For example, the command `mvn clean test -Dprofile=part3` will execute tests 
+as required by the Part 3 of the hackathon instructions.
+
+On the other hand, I tried to make the test execution as **flexible** as possible.
+Thus, any property can be provided via command line.
+For example, one can execute tests against V1 version of the application using 5 browser configuration
+as required by Part 3, e.g.  
+
+`mvn clean test -Dapp.url=https://demo.applitools.com/tlcHackathonMasterV1.html -Dufg.browser.config=multiple`  
+
+This also gives the flexibility to run the tests on any other environment where AppliFashion application is installed.
+
+
