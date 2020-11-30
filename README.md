@@ -1,4 +1,4 @@
-# applitools-holiday-shopping-hackathon
+# Applitools Holiday Shopping Hackathon
 This project is my submission to Applitools Holiday Shoping Hackathon organized by [Applitools](https://applitools.com/).  
 The hackathon instructions can be found here: https://applitools.com/hackathon-v20-3-instructions/  
 Out of Eligible Testing Frameworks, I selected **Selenium WebDriver**, and out of Eligible programming languages, I selected
